@@ -69,7 +69,7 @@ if [[ -z "$BOT_TOKEN" ]]; then
     echo -e "${YELLOW}━━━ METODE 1: INTERACTIVE ━━━${NC}"
     echo ""
     while true; do
-        read -p "🔑 Masukkan Bot Token (dari @BotFather): " BOT_TOKEN
+        read -p ">> Masukkan Bot Token (dari @BotFather): " BOT_TOKEN < /dev/tty
         if [[ -z "$BOT_TOKEN" ]]; then
             print_err "Bot token tidak boleh kosong!"
         elif [[ "$BOT_TOKEN" =~ ^[0-9]+:[A-Za-z0-9_-]+$ ]]; then
@@ -81,7 +81,7 @@ if [[ -z "$BOT_TOKEN" ]]; then
     done
     echo ""
     while true; do
-        read -p "👤 Masukkan Owner ID (Telegram ID Anda): " ADMIN_ID
+        read -p ">> Masukkan Owner ID (Telegram ID Anda): " ADMIN_ID < /dev/tty
         if [[ -z "$ADMIN_ID" ]]; then
             print_err "Owner ID tidak boleh kosong!"
         elif [[ "$ADMIN_ID" =~ ^[0-9]+$ ]]; then
